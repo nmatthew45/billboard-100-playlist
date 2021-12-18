@@ -5,6 +5,7 @@ from dotenv import dotenv_values
 from spotipy import SpotifyOAuth
 
 # Load environment variables
+# In .env file: enter client id, client secret, and redirect uri from spotify project dashboard
 config = dotenv_values(".env")
 
 # Ask user for date to make a request to billboard top 100
@@ -32,17 +33,22 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=config['CLIENT_ID'],
                                                cache_path='token.txt'
                                                ))
 
+# Get user id
 user_id = sp.current_user()['id']
+
+# Create list that will store Spotfiy song uris
 song_uris = []
-year = date.split("-")[0]
+
+# Use each song name in song_names to find its spotify uri and add to song_uris list
 for song in song_names:
-    result = sp.search(q=f"track:{song} year:{year}", type="track")
+    result = sp.search(q=f"track:{song}", type="track")
     print(result)
     try:
         uri = result["tracks"]["items"][0]["uri"]
         song_uris.append(uri)
     except IndexError:
-        print(f"{song_names[song]} doesn't exist in Spotify. Skipped.")
+        print(f"{song} doesn't exist in Spotify. Skipped.")
 
+# Create a private playlist on the user's account
 playlist = sp.user_playlist_create(user=user_id, name=f"{date} Billboard 100", public=False)
 sp.playlist_add_items(playlist_id=playlist['id'], items=song_uris)

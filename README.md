@@ -11,5 +11,5 @@ Prerequisites:
 How to run:
 1. clone this repository
 2. add your Client ID, Client Secret, and Redirect URI to the .env file. Example: CLIENT_ID=abc123
-3. cd billboard-100-playlist
-4. run "py main.py"
+3. open a terminal and navigate to the project folder. Example: cd billboard-100-playlist
+4. run using: py main.py

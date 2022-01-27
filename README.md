@@ -9,8 +9,8 @@ Prerequisites:
 4. Keep note of your Client ID, Client Secret, and Redirect URI
 
 How to run:
-1. clone this repository
-2. add your Client ID, Client Secret, and Redirect URI to the .env file. Example: CLIENT_ID=abc123
-3. open a terminal and navigate to the project folder. Example: cd billboard-100-playlist
-4. run: pip install requests spotipy python-dotenv beautifulsoup4
-5. run program using: py main.py
+1. Clone this repository
+2. Add your Client ID, Client Secret, and Redirect URI to the .env file. Example: CLIENT_ID=abc123
+3. Open a terminal and navigate to the project folder. Example: cd billboard-100-playlist
+4. Run: pip install requests spotipy python-dotenv beautifulsoup4
+5. Run program using: py main.py

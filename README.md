@@ -5,7 +5,7 @@ This python program allows you to input a date and create a private spotify play
 Prerequisites:
 1. You will need to go to https://developer.spotify.com/dashboard/applications and create an app.
 2. Go to your app and click "Edit settings".
-3. Add a redirect URI and hit "save".
+3. Add a redirect URI and hit "Save".
 4. Keep note of your Client ID, Client Secret, and Redirect URI
 
 How to run:
